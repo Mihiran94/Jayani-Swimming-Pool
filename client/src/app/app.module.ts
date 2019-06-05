@@ -16,8 +16,7 @@ import { ItemService } from "./services/item.service";
 import { UserItemService } from "./services/user-item.service";
 
 import { AuthGuard } from "./guards/auth.guard";
-import { AdminItemComponent } from './components/admin-item/admin-item.component';
-import { AdminListComponent } from './components/admin-list/admin-list.component';
+
 import { AdminModule } from './components/admin/admin.module';
 
 
@@ -31,8 +30,7 @@ export function tokenGetter() {
     NavbarComponent,
     FooterComponent,
     ...RoutingComponents,
-    AdminItemComponent,
-    AdminListComponent
+
   ],
   imports: [
     BrowserModule,
