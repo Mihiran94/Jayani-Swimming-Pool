@@ -4,8 +4,8 @@
       <div *ngFor="let item of userItem" class="col col-sm-12 col-md-4 my-3">
         <div class="card">
           <div class="card-body">
-            <h5>{{ item.name }}</h5>
-            <span>{{ item.price }}</span>
+            <h5>Item name: {{ item.name }}</h5>
+            <span>Item price: {{ item.price }}</span>
           </div>
           <div class="card-footer">
             <button (click)="onDeleteItem(item._id)" type="button" class="btn btn-danger btn-buy">DELETE</button>

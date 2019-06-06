@@ -11,6 +11,7 @@ import { UserItemsComponent } from './components/user-items/user-items.component
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthGuard } from "./guards/auth.guard";
+import { CustomerGuard } from './guards/customer.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'authenticate', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, CustomerGuard] },
   { path: 'user/item/:id', component: UserItemsComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent }
 

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   onHandleLogin(form: NgForm) {
     let user = {
       username: form.value.username,
-      password: form.value.password
+      password: form.value.password,
     };
 
     //Validate Username...........................
@@ -48,7 +48,11 @@ export class LoginComponent implements OnInit {
           timeout: 4000,
           type: 'success'
         });
-        this.router.navigate(['dashboard']);
+        if (data.user['role'] == 'admin') {
+          this.router.navigate(['admin']);
+        } else {
+          this.router.navigate(['dashboard']);
+        }
         return true;
       } else {
         this.flashMessage.showFlashMessage({

@@ -119,6 +119,7 @@ router.route('/authenticate').post((req, res, next) => {
                 email: user.email,
                 username: user.username,
                 date: user.date,
+                role: user.role,
                 id: user._id
               },
               token: `Bearer ${token}`

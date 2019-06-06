@@ -9,5 +9,4 @@ router.route('/dashboard').get(passport.authenticate('jwt',{session: false}), (r
   return res.status(200).json(req.user);
 });
 
-
 export default router;

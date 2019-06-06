@@ -53,27 +53,28 @@ router.route('/item/add').post(passport.authenticate('jwt',{session:false}), (re
         .find({contact_info: req.body.contact_info})
         .exec()
         .then(userItem => {
-          if (userItem.length >= 1) {
-            return res.status(409).json({
-              message: `invalid contact info...`
-            });
-          }
+          // if (userItem.length >= 1) {
+          //   return res.status(409).json({
+          //     message: `invalid contact info...`
+          //   });
+          // }
           UserItem
             .find({credit_card: req.body.credit_card})
             .exec()
             .then(userItem => {
-              if (userItem.length >= 1) {
-                return res.status(409).json({
-                  message: `invalid credit card info...`
-                });
-              }
+              // if (userItem.length >= 1) {
+              //   return res.status(409).json({
+              //     message: `invalid credit card info...`
+              //   });
+              // }
               let newUserItem = new UserItem({
                 _id: new mongoose.Types.ObjectId(),
                 name: req.body.name,
                 price: req.body.price,
-                contact_info: req.body.contact_info,
-                country: req.body.country,
-                credit_card: req.body.credit_card,
+                cname: req.body.cname,
+                address: req.body.address,
+                email: req.body.email,
+                tel: req.body.tel,
                 user: req.user._id
               });
               return newUserItem

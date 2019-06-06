@@ -17,20 +17,21 @@ let userItemSchema = new Schema({
     required: [true, 'item price is required...!']
   },
 
-  country: {
+  cname: {
     type: String,
     required: [true, 'country is required...']
   },
-
-  contact_info: {
+  address: {
+    type: String,
+    required: [true, 'credit card number is required...']
+  },
+  email: {
     type: String,
     unique: true,
     required: [true, 'contact info is required...']
   },
-
-  credit_card: {
+  tel: {
     type: String,
-    unique: true,
     required: [true, 'credit card number is required...']
   },
 

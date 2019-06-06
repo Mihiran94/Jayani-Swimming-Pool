@@ -55,6 +55,12 @@ export class AuthService {
     this.token = null;
   }
 
+  isCustomer() {
+    if (!this.isLoggedIn()) {
+      return false;
+    } else return (JSON.parse(localStorage.getItem('user')).role === 'customer' );
+  }
+
   //Return the token if it's not null
   isLoggedIn(): boolean {
     return ( localStorage.getItem('access_token') !== null );

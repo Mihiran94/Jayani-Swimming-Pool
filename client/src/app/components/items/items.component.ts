@@ -54,9 +54,10 @@ export class ItemsComponent implements OnInit {
     let userItem = {
       name: this.name,
       price: this.price,
-      country: form.value.country,
-      contact_info: form.value.contact_info,
-      credit_card: form.value.credit_card
+      cname:form.value.cname,
+      address: form.value.address,
+      email: form.value.email,
+      tel: form.value.tel
     };
     //Check for valid contact number
     /*
