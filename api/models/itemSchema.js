@@ -22,6 +22,11 @@ let itemSchema = new Schema({
     default: Date.now
   }
 
+  // codes:{
+  //   type:String,
+  //   required: [true, 'item code is required...!']
+  // }
+
 });
 
 export default mongoose.model('Items', itemSchema);

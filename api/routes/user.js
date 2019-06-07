@@ -95,7 +95,7 @@ router.route('/authenticate').post((req, res, next) => {
                 email: user.email,
                 username: user.username,
                 date: user.date,
-                // code: user.code,
+                //  codes: user.codes,
                 role: user.role,
                 id: user._id
               },

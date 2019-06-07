@@ -45,6 +45,12 @@ type:String
     default: Date.now
   }
 
+
+  // codes:{
+  //   type: String,
+  //   required: [true, 'item code is required...!']
+  // }
+
 });
 
 userSchema.pre('save', function (next) {

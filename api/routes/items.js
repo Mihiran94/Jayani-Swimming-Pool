@@ -41,6 +41,7 @@ router.route('/item/:id').put((req, res, next) => {
   item.name = req.body.name;
   item.price = req.body.price;
   item.date = req.body.date;
+  // item.codes = req.body.codes;
 
   return Item.findOneAndUpdate({_id: req.params.id},
      item, (err, it) => {
@@ -54,7 +55,8 @@ router.route('/item/seed').post((req, res, next) => {
   let item = new Item({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    price: req.body.price
+    price: req.body.price,
+    
   });
   return item
     .save()

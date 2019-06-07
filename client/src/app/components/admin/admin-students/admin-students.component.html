@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="company">Date</label>
-          <input formControlName="date" class="form-control" type="date" placeholder="Enter Price"
+          <input formControlName="date" class="form-control" type="date" placeholder="Enter Date"
             [class.is-invalid]="date.invalid && (date.dirty || date.touched)">
           <span *ngIf="date.invalid && (date.dirty || date.touched)" class="help-block text-danger">Invalid
             Date!</span>
@@ -54,7 +54,8 @@
                 style="border: none; border-bottom: solid 1px;"></td>
               <td><input type="text" [size]="item.price.toString().length" [(ngModel)]="item.price"
                 style="border: none; border-bottom: solid 1px;"></td>
-              <td><input type="text" [(ngModel)]="item.date"
+              <!-- <td><input type="text" [(ngModel)]="item.date" -->
+                <td><input type="text" [(ngModel)]="item.date"
                 style="border: none; border-bottom: solid 1px;"></td>
               <td>
                 <button (click)="saveItem(item)" class="btn btn-success btn-sm">Save</button>
