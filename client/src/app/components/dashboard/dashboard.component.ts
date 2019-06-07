@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   fetchDashBoard() {
     this.authService.getDashBoard().subscribe(data => {
       this.localUser = data.name;
+      console.log(data)
     });
   }
 

@@ -18,6 +18,7 @@ import { UserItemService } from "./services/user-item.service";
 import { AuthGuard } from "./guards/auth.guard";
 
 import { AdminModule } from './components/admin/admin.module';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 
 export function tokenGetter() {
@@ -30,6 +31,7 @@ export function tokenGetter() {
     NavbarComponent,
     FooterComponent,
     ...RoutingComponents,
+    UserprofileComponent,
 
   ],
   imports: [

@@ -72,6 +72,7 @@ export class AuthService {
     this.user = localStorage.getItem('user');
   }
 
+
   //Get dashboard
   getDashBoard(): Observable<LocalUserModel> {
     this.onLoadUserData();

@@ -14,60 +14,36 @@ const router = express.Router();
 
 //Register Users...................
 router.route('/register').post((req, res, next) => {
-  User
-    .find({email: req.body.email})
-    .exec()
-    .then(user => {
-      if (user.length >= 1) {
-        return res.status(409).json({
-          error: `invalid email id...`
-        });
-      } else {
-        User
-          .find({username: req.body.username})
-          .exec()
-          .then(user => {
-            if (user.length >= 1) {
-              return res.status(409).json({
-                error: `invalid username...`
-              });
-            } else {
-              //Encrypt the password
-              bcrypt.genSalt(10, (err, salt) => {
-                if (err) return res.status(500).json(err);
-                bcrypt.hash(req.body.password, salt, (err, hash) => {
-                  if (err) return res.status(500).json(err);
+
+     
+       
                   let user = new User({
                     _id : new mongoose.Types.ObjectId(),
                     name: req.body.name,
                     email: req.body.email,
                     username: req.body.username,
-                    password: hash
+                    password: req.body.password
                   });
-                  return user
-                    .save()
-                    .then(user => {
-                      return res.status(200).json({
-                        success: true,
-                        user: user
-                      });
-                    })
-                    .catch(err => {
-                      return res.status(500).json(err);
+
+                  user.save((err, doc) => {
+                    if (!err){
+                        res.send(doc);            
+                    }
+                    else
+                    {
+                            if (err.code === 11000){
+                                res.status(422).send('Data you entered has already been used');
+                            }
+                            else{
+                                console.log(err)
+                                return next(err);
+                                }
+                    }
                     });
-                });
-              });
-            }
-          })
-          .catch(err => {
-            return res.status(500).json(err);
-          });
-      }
-    })
-    .catch(err => {
-      return res.status(500).json(err);
-    });
-});
+                
+           }
+)
+      
 
 //Get All Of The Users............................
 router.route('/getall').get((req, res, next) => {
@@ -119,6 +95,7 @@ router.route('/authenticate').post((req, res, next) => {
                 email: user.email,
                 username: user.username,
                 date: user.date,
+                // code: user.code,
                 role: user.role,
                 id: user._id
               },

@@ -76,6 +76,7 @@ router.route('/item/add').post(passport.authenticate('jwt',{session:false}), (re
                 email: req.body.email,
                 tel: req.body.tel,
                 user: req.user._id
+                
               });
               return newUserItem
                 .save()

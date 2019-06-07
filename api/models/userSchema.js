@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
-
+const bcrypt =require('bcryptjs')
+const jwt = require('jsonwebtoken')
 let userSchema = new Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId
@@ -32,14 +33,41 @@ let userSchema = new Schema({
     required: [true, 'password is required...!']
   },
   role:{
+    default:"customer",
     type: String,
-    required: true
+  },
+  salt:{
+type:String
   },
 
   date: {
     type: Date,
     default: Date.now
   }
+
 });
 
+userSchema.pre('save', function (next) {
+  bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(this.password, salt, (err, hash) => {
+          this.password = hash;
+          this.salt = salt;
+          next();
+      });
+  });
+});
+userSchema.methods.verifyPassword = function(password)
+{
+  return bcrypt.compareSync(password,this.Password);
+}
+userSchema.methods.generateJwt = function () {
+  return jwt.sign({
+      _id: this._id,  
+      role:this.role     
+  }, process.env.JWT_SECRET,
+  {
+       expiresIn: process.env.JWT_EXP
+  });
+
+}
 export default mongoose.model('Users', userSchema);

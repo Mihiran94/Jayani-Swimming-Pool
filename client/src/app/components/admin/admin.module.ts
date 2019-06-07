@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BscCsComponent } from './subjects/bsc-cs/bsc-cs.component';
 import { BscIsComponent } from './subjects/bsc-is/bsc-is.component';
+import { AdminEmployeeComponent } from './admin-employee/admin-employee.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BscIsComponent } from './subjects/bsc-is/bsc-is.component';
     AdminSubjectsComponent,
     AdminLoginComponent,
     BscCsComponent,
-    BscIsComponent],
+    BscIsComponent,
+    AdminEmployeeComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

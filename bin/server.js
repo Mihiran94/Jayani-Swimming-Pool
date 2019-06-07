@@ -36,6 +36,7 @@ import itemsRoute from "../api/routes/items";
 import userRoute from "../api/routes/user";
 import dashboardRoute from "../api/routes/dashboard";
 import userItemRoute from "../api/routes/userItem";
+import AdminEmployee from "../api/routes/employee";
 
 //Import MongoDB Connection
 import "../api/config/database";
@@ -80,6 +81,9 @@ app.use('/user', dashboardRoute);
 
 //Route for User Item
 app.use('/user', userItemRoute);
+//Route for User Item
+app.use('/employee', AdminEmployee);
+
 
 //Setup Port & Listening to Server
 const port = process.env.PORT || 5000;
