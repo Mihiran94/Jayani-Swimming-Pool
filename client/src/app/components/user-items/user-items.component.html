@@ -10,9 +10,14 @@
           <div class="card-footer">
             <button (click)="onDeleteItem(item._id)" type="button" class="btn btn-danger btn-buy">DELETE</button>
           </div>
+
         </div>
       </div>
     </div>
+
+      <button (click)="checkout()" type="button"  class="btn btn-success ">Checkout</button>
+
+
   </ng-container>
   <ng-template #noItems>
     <div class="text-center">

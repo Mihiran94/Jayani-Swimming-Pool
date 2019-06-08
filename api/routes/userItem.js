@@ -71,6 +71,7 @@ router.route('/item/add').post(passport.authenticate('jwt',{session:false}), (re
                 _id: new mongoose.Types.ObjectId(),
                 name: req.body.name,
                 price: req.body.price,
+                
                 cname: req.body.cname,
                 address: req.body.address,
                 email: req.body.email,
@@ -107,7 +108,7 @@ router.route('/item/:id').get((req, res, next) => {
   UserItem
     .find({ user: userId })
     .sort({ date: -1 })
-    .select('name price _id user')
+    .select('name  price _id user')
     .exec()
     .then(userItems => {
       if (userItems.length < 1) {

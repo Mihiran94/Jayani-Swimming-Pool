@@ -11,6 +11,7 @@ let userItemSchema = new Schema({
     match: /^[a-zA-Z ]{2,30}$/,
     required: [true, 'item name is required...!']
   },
+  
 
   price: {
     type: String,

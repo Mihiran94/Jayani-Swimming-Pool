@@ -11,6 +11,11 @@ let itemSchema = new Schema({
     match: /^[a-zA-Z ]{2,30}$/,
     required: [true, 'item name is required...!']
   },
+  code: {
+    type: String,
+    match: /^[a-zA-Z ]{2,30}$/,
+    required: [true, 'item code is required...!']
+  },
 
   price: {
     type: String,

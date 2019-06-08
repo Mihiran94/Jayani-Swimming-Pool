@@ -22,6 +22,7 @@ export class AdminitemService {
         return itemModelData.itemModels.map(item => {
           return {
             name: item.name,
+            code:item.code,
             price: item.price,
             date: item.date,
             id: item._id
@@ -40,13 +41,13 @@ export class AdminitemService {
 
   //fetching the post to edit
   getItem(id: string){
-   return this.http.get<{_id: string , name: string , price: string ,date: Date }>(
+   return this.http.get<{_id: string , name: string ,code: string, price: string ,date: Date }>(
      "http://localhost:3000/api/posts/" + id);
   }
 
 
-  addItem( name: string,price:string,date:Date) {
-    const item: ItemModel = { _id: null, name: name, price: price,date:date };
+  addItem( name: string,code:string,price:string,date:Date) {
+    const item: ItemModel = { _id: null, name: name,code:code, price: price,date:date };
     this.http
       .post<{ message: string, itemId: string }>("http://localhost:3000/api/posts", item)
       .subscribe(responseData => {
@@ -58,8 +59,8 @@ export class AdminitemService {
       });
   }
 
-  updateItem(id: string, title: string, price: string,date:Date){
-      const item: ItemModel = { _id:id,name:name,price:price,date:date};
+  updateItem(id: string, title: string,code:string, price: string,date:Date){
+      const item: ItemModel = { _id:id,name:name,code:code,price:price,date:date};
       this.http.put("http://localhost:3000/api/posts/" + id, item)
       .subscribe(response => {
         const updatedItems = [...this.itemModels];

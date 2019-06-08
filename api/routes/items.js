@@ -10,7 +10,7 @@ const router = express.Router();
 router.route('/items').get((req, res, next) => {
   Item
     .find()
-    .select('name price date _id')
+    .select('name code price date _id')
     .exec()
     .then(items => {
       if (items.length < 1) {
@@ -39,6 +39,7 @@ router.route('/item/:id').delete((req, res, next) => {
 router.route('/item/:id').put((req, res, next) => {
   const item = new Item();
   item.name = req.body.name;
+  item.code = req.body.code;
   item.price = req.body.price;
   item.date = req.body.date;
   // item.codes = req.body.codes;
@@ -56,6 +57,7 @@ router.route('/item/seed').post((req, res, next) => {
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
     price: req.body.price,
+    code: req.body.code
     
   });
   return item

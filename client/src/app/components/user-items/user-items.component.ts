@@ -50,5 +50,20 @@ export class UserItemsComponent implements OnInit {
     }
   }
 
+  checkout(){
+
+      this.flashMessage.showFlashMessage({
+        messages:  ["Thanks for join Us!"],
+        dismissible: true,
+        timeout: 4000,
+        type: 'success',
+
+      });
+      
+      this.router.navigate(['items']);
+  }
+
+
+
 
 }

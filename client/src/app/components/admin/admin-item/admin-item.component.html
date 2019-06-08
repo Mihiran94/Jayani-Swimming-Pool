@@ -2,7 +2,7 @@
   <form *ngIf="!selectedStudent" class="col-sm-4" [formGroup]="studentForm" (ngSubmit)="addItem(studentForm.value)">
     <div class="card">
       <div class="card-header">
-        <strong>Add Student</strong>
+        <strong>Add Item</strong>
       </div>
       <div class="card-body">
         <div class="form-group">
@@ -11,6 +11,12 @@
             [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
           <span *ngIf="name.invalid && (name.dirty || name.touched)" class="help-block text-danger">Invalid Index
             Name!</span>
+        </div>
+        <div class="form-group">
+          <label for="company">Code Number</label>
+          <input formControlName="code" class="form-control" type="text" placeholder="Code Number"
+            [class.is-invalid]="code.invalid && (code.dirty || code.touched)">
+          <span *ngIf="code.invalid && (code.dirty || code.touched)" class="help-block text-danger">Invalid Code Number!</span>
         </div>
         <div class="form-group">
           <label for="company">Price</label>
@@ -28,7 +34,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button class="btn btn-sm btn-primary" type="submit">
+        <button class="btn btn-md btn-primary" type="submit">
           <i class="fa fa-dot-circle-o"></i> Add</button>
       </div>
     </div>
@@ -37,13 +43,14 @@
   <div class="col-lg-8">
     <div class="card">
       <div class="card-header">
-        <i class="fa fa-align-justify"></i> Students</div>
+        <i class="fa fa-align-justify"></i> <strong>Item List</strong></div>
       <div class="card-body">
         <table class="table table-responsive-sm">
           <thead>
             <tr>
               <th>Name</th>
               <th>Price</th>
+              <th>Code Number</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>
@@ -52,6 +59,8 @@
             <tr *ngFor="let item of items">
               <td><input type="text" [size]="item.name.length" [(ngModel)]="item.name"
                 style="border: none; border-bottom: solid 1px;"></td>
+                <td><input type="text" [size]="item.code.toString().length" [(ngModel)]="item.code"
+                  style="border: none; border-bottom: solid 1px;"></td>
               <td><input type="text" [size]="item.price.toString().length" [(ngModel)]="item.price"
                 style="border: none; border-bottom: solid 1px;"></td>
               <!-- <td><input type="text" [(ngModel)]="item.date" -->
@@ -88,3 +97,4 @@
     </div>
   </div>
 </div>
+<!-- &times; -->
