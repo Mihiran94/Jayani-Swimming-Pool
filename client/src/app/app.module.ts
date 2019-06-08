@@ -19,6 +19,7 @@ import { AuthGuard } from "./guards/auth.guard";
 
 import { AdminModule } from './components/admin/admin.module';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 
 
 export function tokenGetter() {
@@ -32,6 +33,7 @@ export function tokenGetter() {
     FooterComponent,
     ...RoutingComponents,
     UserprofileComponent,
+    CalculatorComponent,
 
   ],
   imports: [

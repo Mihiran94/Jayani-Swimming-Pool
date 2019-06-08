@@ -12,6 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {UserprofileComponent} from './components/userprofile/userprofile.component'
 import { AuthGuard } from "./guards/auth.guard";
 import { CustomerGuard } from './guards/customer.guard';
+import {CalculatorComponent } from './components/calculator/calculator.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
   {path : 'userprofile',component:UserprofileComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, CustomerGuard] },
   { path: 'user/item/:id', component: UserItemsComponent, canActivate: [AuthGuard] },
+  { path: 'calculator' ,component:CalculatorComponent},
   { path: '**', component: NotFoundComponent }
+ 
 
 ];
 

@@ -22,6 +22,10 @@
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/userprofile" >PROFILE</a>
       </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/calculator" >CALCULATOR</a>
+      </li>
+      
     </ul>
     <ul class="navbar-nav ml-lg-auto mt-2 mt-lg-0">
       <li *ngIf="!authService.isLoggedIn()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item">
