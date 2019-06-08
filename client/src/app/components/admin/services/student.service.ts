@@ -10,20 +10,20 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  unassignSubject(student, subject) {
-    return this.http.put(`http://localhost:8080/admin/student/subject`, { student, subject },
-      { headers: { Authorization: `Bearer ` } });
-  }
+  // unassignSubject(student, subject) {
+  //   return this.http.put(`http://localhost:8080/admin/student/subject`, { student, subject },
+  //     { headers: { Authorization: `Bearer ` } });
+  // }
 
-  assignSubject(student, subject) {
-    return this.http.post(`http://localhost:8080/admin/student/subject`, { student, subject },
-      { headers: { Authorization: `Bearer ` } });
-  }
+  // assignSubject(student, subject) {
+  //   return this.http.post(`http://localhost:8080/admin/student/subject`, { student, subject },
+  //     { headers: { Authorization: `Bearer ` } });
+  // }
 
-  elegibleSubjects(course: string) {
-    return this.http.get(`http://localhost:8080/admin/student/subject/${course}`,
-      { headers: { Authorization: `Bearer ` } });
-  }
+  // elegibleSubjects(course: string) {
+  //   return this.http.get(`http://localhost:8080/admin/student/subject/${course}`,
+  //     { headers: { Authorization: `Bearer ` } });
+  // }
 
   removeItem(id: string) {
     return this.http.delete(`http://localhost:5000/api/item/${id}`,

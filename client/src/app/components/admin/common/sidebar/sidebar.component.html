@@ -9,17 +9,25 @@
         <li class="nav-title">Components</li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="[{ outlets: { admin: ['students'] } }]" routerLinkActive="active">
-            <i class="nav-icon icon-pie-chart"></i> Students</a>
+            <i class="nav-icon icon-pie-chart"></i> Items</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="[{ outlets: { admin: ['employee'] } }]" routerLinkActive="active">
             <i class="nav-icon icon-pie-chart"></i> Employee</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" [routerLink]="[{ outlets: { admin: ['employee'] } }]" routerLinkActive="active">
             <i class="nav-icon icon-pie-chart"></i> Customer</a>
+
         </li>
-        <li class="nav-item nav-dropdown">
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[{ outlets: { admin: ['profile'] } }]" routerLinkActive="active">
+            <i class="nav-icon icon-pie-chart"></i> Profile</a>
+        </li>
+
+        <!-- <li class="nav-item nav-dropdown">
           <a class="nav-link nav-dropdown-toggle" href="#">
             <i class="nav-icon icon-bell"></i> Subjects</a>
           <ul class="nav-dropdown-items">
@@ -37,7 +45,7 @@
                 <i class="nav-icon icon-bell"></i> BSc SE Hons.</a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <li class="divider"></li>
         <li class="nav-title">Extras</li>

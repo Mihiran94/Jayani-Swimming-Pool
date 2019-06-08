@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.fetchDashBoard();
-    this.title = "Buy Cheap Gives You The Best Ever";
+    this.title = "Jayani Carts Gives You The Best Ever";
   }
 
   fetchDashBoard() {

@@ -59,10 +59,11 @@
             <tr *ngFor="let item of items">
               <td><input type="text" [size]="item.name.length" [(ngModel)]="item.name"
                 style="border: none; border-bottom: solid 1px;"></td>
+                <td><input type="text" [size]="item.price.toString().length" [(ngModel)]="item.price"
+                  style="border: none; border-bottom: solid 1px;"></td>
                 <td><input type="text" [size]="item.code.toString().length" [(ngModel)]="item.code"
                   style="border: none; border-bottom: solid 1px;"></td>
-              <td><input type="text" [size]="item.price.toString().length" [(ngModel)]="item.price"
-                style="border: none; border-bottom: solid 1px;"></td>
+
               <!-- <td><input type="text" [(ngModel)]="item.date" -->
                 <td><input type="text" [(ngModel)]="item.date"
                 style="border: none; border-bottom: solid 1px;"></td>

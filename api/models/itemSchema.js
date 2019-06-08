@@ -13,7 +13,8 @@ let itemSchema = new Schema({
   },
   code: {
     type: String,
-    match: /^[a-zA-Z ]{2,30}$/,
+    match: /^[ 0-9]/,
+    // match: /^[a-zA-Z ]{2,30}$/,
     required: [true, 'item code is required...!']
   },
 

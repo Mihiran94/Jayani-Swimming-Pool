@@ -1,27 +1,88 @@
-<div class="login-header text-center">
+<!-- <div class="login-header text-center"> -->
+    <div class="text-center card text-dark bg-info py-3 d-md-down-none"  style="width:auto">
   <h2>Login</h2>
   <h5 class="text-muted">Let's Visit Your Account</h5>
 </div>
 <hr>
 <div>
-  <div class="card">
+  <div class="card" style="width: auto" >
     <form (submit)="onHandleLogin(authForm)" #authForm="ngForm">
       <div class="card-body">
+        
         <div class="form-group">
           <label for="username">Username</label>
           <input id="username" name="username" type="text" [class.is-invalid]="username.invalid && username.touched" class="form-control" placeholder="Enter Username..." ngModel required #username="ngModel" >
           <small class="text-danger" [class.d-none]="username.valid || username.untouched" >Invalid Username</small>
         </div>
+
         <div class="form-group">
           <label for="password">Password</label>
           <input id="password" name="password" type="password" [class.is-invalid]="password.invalid && password.touched" class="form-control" placeholder="Enter Password..." ngModel required #password="ngModel" >
           <small class="text-danger" [class.d-none]="password.valid || password.untouched" >Invalid Password</small>
         </div>
+
       </div>
       <div class="card-footer">
         <button [disabled]="authForm.invalid" id="btn-login" type="submit" class="btn btn-success">LOGIN</button>
       </div>
+
+      <div class="col-12 text-right">
+        <button class="btn btn-link px-0 " type="button">Forgot password?</button>
+      </div>
+
     </form>
   </div>
 </div>
 
+
+<!--
+ <body class="app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card-group">
+            <div class="card p-6">
+              <div class="card-body">
+                <h1>Login</h1>
+                <p class="text-muted">Sign In to your account</p>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="icon-user"></i>
+                    </span>
+                  </div>
+                  <input class="form-control" type="text" placeholder="Username">
+                </div>
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="icon-lock"></i>
+                    </span>
+                  </div>
+                  <input class="form-control" type="password" placeholder="Password">
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button class="btn btn-primary px-4" type="button">Login</button>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button class="btn btn-link px-0" type="button">Forgot password?</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+              <div class="card-body text-center">
+                <div>
+                  <h2>Sign up</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                  <button class="btn btn-primary active mt-3" type="button">Register Now!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body> -->

@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title = "Buy Cheap";
+    this.title = "Jayani cart";
     this.onLoadUser();
   }
 
