@@ -37,10 +37,10 @@ router.route('/employee/:id').delete((req, res, next) => {
 })
 
 router.route('/employee/:id').put((req, res, next) => {
-  const item = new Employee();
-  item.name = req.body.name;
-  item.price = req.body.price;
-  item.date = req.body.date;
+  const emp = new Employee();
+  emp.name = req.body.name;
+  emp.price = req.body.price;
+  emp.date = req.body.date;
 
   return Employee.findOneAndUpdate({_id: req.params.id},
      item, (err, it) => {
@@ -51,17 +51,17 @@ router.route('/employee/:id').put((req, res, next) => {
 
 //Seed Items To The DataBase
 router.route('/employee/seed').post((req, res, next) => {
-  let item = new  Employee({
+  let emp = new  Employee({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
     price: req.body.price
   });
-  return item
+  return emp
     .save()
     .then(item => {
       return res.status(200).json({
         success: true,
-        item: item
+        emp: emp
       });
     })
     .catch(err => {
